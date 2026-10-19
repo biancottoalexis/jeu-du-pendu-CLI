@@ -13,12 +13,18 @@ func newgames() {
 	var pseudo string
 	fmt.Print("Entrez votre pseudo : ")
 	fmt.Scanln(&pseudo)
-	fmt.Println("Bienvenue", pseudo)
 
 	if pseudo == "" {
 		fmt.Println("Erreur : Entrez un pseudo valide")
 		return
 	}
+	fmt.Println("Bienvenue", pseudo)
+
 	mot := selection()
+	if mot == "" {
+		return
+	}
 	fmt.Println("Nouvelle partie ! le mot contient", len(mot), "lettres")
+
+	IndicateLetter(mot)
 }

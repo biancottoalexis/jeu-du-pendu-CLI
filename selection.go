@@ -1,3 +1,4 @@
+
 package main
 
 import (
@@ -7,15 +8,15 @@ import (
 	"strings"
 )
 
-func selection() {
+func selection() string {
 	contenu, err := os.ReadFile("mot.txt")
 	if err != nil {
 		fmt.Println("Erreur :", err)
-		return
+		return ""
 	}
 
 	mots := strings.Split(strings.TrimSpace(string(contenu)), "\n")
 	mot := mots[rand.Intn(len(mots))]
 
-	fmt.Println(mot)
+	return mot
 }
